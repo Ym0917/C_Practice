@@ -1,0 +1,35 @@
+//请计算表达式“(-8 + 22)×a - 10 + c÷2”，其中，a = 40，c = 212。
+//
+//输入描述 :
+//无。
+//输出描述 :
+//(-8 + 22)×a - 10 + c÷2计算之后的结果，为一个整数。
+
+
+#include<stdio.h>
+
+int main()
+{
+    double a=40,c=212,sum;
+    sum=(-8+22)*a-10+c/2;
+    printf("%d",(int)sum);//一定要强转！，要不然输出不匹配！，输出结果为0.
+    
+    return 0;
+}
+
+#include<stdio.h>
+
+int main()
+{
+    int a=40,c=212,sum;
+    sum=(-8+22)*a-10+c/2;
+    printf("%d",sum);
+    
+    return 0;
+}
+
+//summary
+//1.浮点型精度高于整形, 因此整形数先自动被转换成浮点型, 再进行除法运算, 最终结果也为浮点型.
+//2.注意输入输出格式匹配！ 否则结果容易出错。
+//3.整型提升：https://blog.csdn.net/rockpk008/article/details/47189267
+//4.C语言中的printf用%d输出float类型数据出现或以%f输出int型数据的结果为什么是0？http://blog.sina.com.cn/s/blog_97b4973a0101j9eo.html
