@@ -1,0 +1,53 @@
+//题目描述
+//输入一个字符，用它构造一个三角形金字塔。
+//输入描述 :
+//输入只有一行，一个字符。
+//输出描述 :
+//该字符构成的三角形金字塔。
+//示例1
+//输入
+//复制
+//1
+//输出
+//复制
+    1
+   1 1
+  1 1 1
+ 1 1 1 1
+1 1 1 1 1
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n = 0;
+	char val = 0;
+	//读入字符
+	scanf("%c", &val);
+	int space = 4;
+	n = 5;
+	//外循环遍历每一行
+	for (int i = 1; i <= n; ++i) {
+		//输出前导的空格
+		for (int j = 0; j < space; ++j)
+			printf(" ");
+		int count = i + i - 1;
+		bool flag = true;
+		//循环count遍，每一个空格输出一个字符，交替输出
+		for (int k = 0; k < count; ++k){
+			if (flag) {
+				printf("%c", val);
+				//最后一个是空格
+				if (k == count - 1)
+					printf(" ");
+			}
+			else
+				printf(" ");
+			//更新标志
+			flag = !flag;
+		}
+		printf("\n");
+		space--;
+	}
+	return 0;
+}
