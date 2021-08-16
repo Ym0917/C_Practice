@@ -1,0 +1,42 @@
+  //题目：
+	//打印100到200之间的素数。
+
+	//素数：
+	//曾称质数。一个大于1的正整数，如果除了1和它本身以外，不能被其他正整数整除，就叫素数。如2，3，5，7，11，13，17…。
+
+	//思路：遍历100到200之间的数，在PrimeNumber函数中逐个判断每个数是否为素数。
+	//若在区间[2, Num）之间没有数字可以将Num整除，则Num为素数；否则不为素数。
+
+
+#include <stdio.h>
+void PrimeNumber(int Num)
+{
+	int i = 2;
+	while (i < Num)
+	{
+		if (Num%i != 0)
+		{
+			i++;
+		}
+		else
+		{
+			return;
+		}
+
+	}
+	printf("%d ", Num);
+	return;
+}
+
+int main()
+{
+
+	printf("100-200间的素数有：\n");
+	int num = 100;
+	for (; num <= 200; num++)
+	{
+		PrimeNumber(num);
+	}
+
+	return 0;
+}
