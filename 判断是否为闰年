@@ -1,0 +1,32 @@
+题目：判断一个年份是不是闰年。
+
+闰年：
+（1）十年一闰百年不闰：即如果year能够被4整除，但是不能被100整除，则year是闰年。
+（2）每四百年再一闰：如果year能够被400整除，则year是闰年。
+
+本题条件已给明，能够熟练用运&&和||操作符即可。
+
+#include <stdio.h>
+void LeapYear(int a)
+{
+	if ((0 == a % 4 && a % 100 != 0) || (0 == a % 400))
+	{
+		printf("%d年是闰年！\n", a);
+	}
+	else
+	{
+		printf("%d年不是闰年！\n", a);
+	}
+	return;
+}
+
+int main()
+{
+	int Year = 0;
+	printf("请输入年份：");
+	scanf("%d", &Year);
+	
+	LeapYear(Year);
+	
+	return 0;
+}
