@@ -1,0 +1,58 @@
+//奇数：奇数（odd）指不能被2整除的整数
+//IsOdd函数
+
+//1
+int IsOdd(int _Data)
+{
+	if (_Data % 2 == 1)
+	{
+		return 1;//返回1表示是奇数。
+	}
+	return 0;//返回1表示不是奇数。
+}
+
+//2
+int IsOdd(int _Data)
+{
+	//1.
+	//int ret = (_Data % 2 == 1 ? 1 : 0);
+	//return ret;
+
+	//2.
+	//return _Data % 2 == 1 ? 1 : 0;
+
+	//3.
+	//return _Data % 2 == 1;
+
+    //4.
+	return _Data % 2;
+}
+
+//3宏（不推荐）
+#define IsOdd(x) ((x)&1)
+
+//4按位与（推荐）
+//位运算是直接对内存数据进行操作的，不需要转成十进制，处理速度非常快。
+int IsOdd(int _Data)
+{
+	return _Data & 1;
+}
+
+//main函数
+int main()
+{
+	printf("Please Enter Your Data:\n");
+	int Data = 0;
+	scanf("%d", &Data);
+	if (IsOdd(Data))
+	{
+		printf("是奇数\n");
+	}
+	else
+	{
+		printf("不是奇数\n");
+	}
+
+	return 0;
+}
+
